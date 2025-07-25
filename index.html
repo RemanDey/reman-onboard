@@ -2,30 +2,278 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hi there 👋</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-      background: #f5f5f5;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Through My Things – Reman Dey</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 35px 40px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    max-width: 90%;
+    width: 420px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInZoom 0.8s ease-in-out forwards;
+    animation-delay: 0.4s;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.01);
+  }
+
+  .greeting {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: slideUp 0.6s ease-in-out forwards;
+  }
+
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #fff;
+    font-size: 0.9rem;
+    width: 0;
+    margin: 0 auto;
+    animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+  }
+
+  .fade {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .fade-delay {
+    animation-delay: 1.2s;
+  }
+
+  .fade-more {
+    animation-delay: 1.6s;
+  }
+
+  .connect {
+    margin-top: 20px;
+  }
+
+  .connect a {
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+    margin: 5px;
+  }
+
+  .connect a:hover {
+    background: #333;
+    transform: scale(1.05);
+  }
+
+  .connect i {
+    margin-right: 8px;
+  }
+
+  .quote {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeInGlow 0.8s ease forwards;
+    animation-delay: 2.4s;
+    transition: opacity 1s ease;
+  }
+
+  p a {
+    text-decoration: underline;
+    color: #ffd700;
+    transition: color 0.3s ease;
+  }
+
+  p a:hover {
+    color: #fff;
+  }
+
+  @keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
-  </style>
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInGlow {
+    from {
+      opacity: 0;
+      text-shadow: none;
+    }
+    to {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+</style>
+
 </head>
 <body>
   <div class="card">
-    <h1>Hello, Stranger!</h1>
-    <p>You just scanned my laptop QR code 😊</p>
-    <p>I'm <strong>Reman Dey</strong>, an Engineering Physics student at <strong>IIT Mandi</strong>.</p>
-    <p>Want to connect? 👉 <a href="mailto:your.email@example.com">Email me</a></p>
+    <div id="greeting" class="greeting">Hi there!</div>
+
+    <p class="fade">You just scanned something that belongs to me — maybe a pencil box, tiffin, or just a quiet witness of my routine.</p>
+    <p class="fade fade-delay"><strong>I'm Reman Dey</strong>, a B.Tech student in <strong>Engineering Physics</strong> at <strong>IIT Mandi</strong>.</p>
+    <p class="fade fade-more">I’m fascinated by how physical principles shape the universe and how code helps us explore it. 
+                              Being a physics enthusiast with a profound passion for hands-on innovation and solving challenging, research-oriented physics problems, my journey in STEM is driven by a relentless curiosity and a desire to turn complex ideas into tangible creations. 
+                              When I’m not studying, I’m probably building something, breaking it, or thinking about why it works. 
+                              You can explore my innovative projects and their results on <a href="https://remandey.github.io/my-portfolio/">my portfolio</a></p>
+    <p class="fade fade-more">Every object I carry reflects a part of my journey — of curiosity, thought, and purpose.</p>
+
+    <div class="connect fade" style="animation-delay: 2.5s;">
+      <a href="mailto:reman.airport@gmail.com" class="btn primary-btn"><i class="fas fa-envelope"></i> Email Me</a>
+      <a href="https://linkedin.com/in/remandey" target="_blank" class="btn primary-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="tel:+919674300416" class="btn primary-btn"><i class="fas fa-phone"></i> Call Me</a>
+    </div>
+
+    <div class="quote"><div id="quoteBox" class="typewriter"></div></div>
   </div>
+
+  <script>
+    // Time-based greeting
+    const greetingEl = document.getElementById('greeting');
+    const hour = new Date().getHours();
+    let greeting = 'Hi there!';
+    if (hour >= 5 && hour < 12) greeting = 'Good morning!';
+    else if (hour >= 12 && hour < 17) greeting = 'Good afternoon!';
+    else if (hour >= 17 && hour < 21) greeting = 'Good evening!';
+    else greeting = 'Burning the midnight oil?';
+    greetingEl.textContent = greeting;
+
+    // Quote logic with auto-rotation and typewriter
+    const quotes = [
+      "Even in stillness, objects remember their journey.",
+      "Things we carry often carry a part of us too.",
+      "Not all who wander are lost — some just belong elsewhere.",
+      "Small objects, big stories.",
+      "In the quiet corners of your bag, my story lives.",
+      "Ownership isn’t about possession, but connection.",
+      "Everyday tools, extraordinary meaning.",
+      "This item is a silent witness to my day.",
+      "You’ve touched something that has touched my life.",
+      "Inanimate but not insignificant.",
+      "Every scratch has a story.",
+      "My world, through simple things.",
+      "You found more than just an object — you found a trace of me.",
+      "From labs to lectures, this has journeyed with me.",
+      "Objects are memory-keepers in disguise.",
+      "This is a chapter in my daily book.",
+      "Even my pencil box has physics inside.",
+      "Curiosity fits in every container.",
+      "This box held more than lunch — it held ideas.",
+      "Life in the margins. Purpose in the pens.",
+      "Every object is a quiet companion of thought.",
+      "Return it if you'd like. But thanks for noticing it anyway.",
+      "These aren’t lost. They’re adventuring.",
+      "Not all treasures shine.",
+      "Welcome to the unofficial museum of my mind.",
+      "Some stories are stitched into fabric, others tucked in zipper pouches.",
+      "A lost object is just on a detour from its journey with me.",
+      "My fingerprints linger in the details.",
+      "You’re holding something that has heard silence and seen storms.",
+      "Not everything valuable has a password.",
+      "This has shared space with equations, thoughts, and dreams.",
+      "Even the ordinary things around us hold fragments of our identity.",
+        "A bag tag, a silent flag of belonging.",
+        "It’s not lost — just making a new friend.",
+        "Companions in canvas and graphite.",
+        "More than material — it holds memory.",
+        "Every dent is a badge from a moment lived.",
+        "Its value is personal, not monetary.",
+        "Scribbles, scuffs, and silent solidarity.",
+        "It has waited patiently while I solved problems and solved myself.",
+        "Held in this object is a quiet persistence.",
+        "Between classes and curiosity, this stayed beside me.",
+        "Sometimes, we lose things to find perspectives.",
+        "This object witnessed breakthroughs no one clapped for.",
+        "The essence of me, in pocket-sized form.",
+        "Borrowed by time. Found by kindness.",
+        "You found something shaped by care and chaos alike.",
+        "Memory isn’t always digital.",
+        "Even stillness has purpose here.",
+        "Worn edges tell of work, not wear."
+    ];
+
+    const quoteBox = document.getElementById("quoteBox");
+    let currentQuoteIndex = Math.floor(Math.random() * quotes.length);
+
+    function showQuote(index) {
+      quoteBox.classList.remove("typewriter");
+      void quoteBox.offsetWidth; // restart animation
+      quoteBox.textContent = quotes[index];
+      quoteBox.classList.add("typewriter");
+    }
+
+    showQuote(currentQuoteIndex);
+
+    setInterval(() => {
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+      showQuote(currentQuoteIndex);
+    }, 8000);
+  </script>
 </body>
 </html>
